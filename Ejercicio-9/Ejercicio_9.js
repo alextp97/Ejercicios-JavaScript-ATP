@@ -21,10 +21,6 @@ function toLowercaseKeys(myObject) {
         return newObj;
 }
 
-
-
-
-
 const myObject = { NamE: 'Charles', ADDress: 'Home Street' };
 const myObjLowercase = toLowercaseKeys(myObject);
 console.log(myObjLowercase); // { name: 'Charles', address: 'Home Street' }

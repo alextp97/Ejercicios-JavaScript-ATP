@@ -11,24 +11,18 @@ const arrCities2 = [
     {city: 'Jaén', country: 'Spain', capital: false},
 ];
 
-
-const isSpain = true;
-
-
-/*const noCapital=[];
-
-  arrCities2.filter((capitales) => {
-    if( capitales.capital === false){
-        return noCapital = (capitales.city, capitales.isSpain)
-    }
-});*/
-
-
-
-const noCapital = []
- arrCities2.slice().filter((capitales)=> {
+//Primero filtro el array de Cities2 para ver las ciudades que no son capitales
+const noCapital = arrCities2.filter((capitales)=> {
     if(capitales.capital === false){
-    noCapital.push(capitales);
+        return capitales;
+    }
+
+    //Vuelvo a recorrer el array para comprobar si las ciudades son de España o no
+}).map( data => {
+    let is = ( data.country === 'Spain');
+    return {
+        city: data.city,
+        isSpain: is 
     }
 });
 

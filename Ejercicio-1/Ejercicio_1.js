@@ -8,5 +8,5 @@ const arrNames = [
     {id: 5, name: 'Lala'}
   ];
 
-const item = arrNames.find( (elemento) => elemento.id == 3);
+const item = arrNames.find( (elemento) => elemento.id === 3);
   console.log(item)

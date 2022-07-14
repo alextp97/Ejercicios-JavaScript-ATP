@@ -5,21 +5,28 @@
     //Primer parámetro es un objeto con x número de campos y valores
     //Segundo parámetro es una función que retorna un booleano, que se tiene que aplicar al objeto del primer parámetro
 
-    function returnFalsyValues( param1, funct) {
+    const returnFalsyValues = ( param1, funct) => {
+        
+        //console.log(Object.values(param1).filter( value => !funct(value)));
 
-        let valueObject = {};
+        //CON KEYS
+        const newArr = {};
+        const objKeys = Object.keys(param1);
 
-        for( let value in param1){
-            //console.log(param1[value])
-            //console.log(funct(param1[value]))
-            if(!funct(param1[value])){
 
-                valueObject[value] = param1[value];
-                //console.log(param1[value])
+        for(let i = 0; i < objKeys.length; i++){
+
+            //console.log(param1[objKeys[i]]);
+            if(!funct(param1[objKeys[i]])){
+                
+                newArr[objKeys[i]] = param1[objKeys[i]]
+
+                //console.log(newArr[objKeys[i]])
             }
         }
-        return valueObject;
-        //console.log(funct[value])*/
+    
+        return newArr;
+
 
     }
     

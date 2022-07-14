@@ -7,8 +7,12 @@
 
 function removeHTMLTags (cadena) {
 
-    return cadena.replace(/<[^>]*>/g, '')
+    
 }
+
+const removeHTMLTags = ( cadena) => cadena.replace(/<[^>]*>/g, '')
+
+
 
 const result = removeHTMLTags('<div><span>lorem</span> <strong>ipsum</strong></div> <h4>Hola</h4>');
 

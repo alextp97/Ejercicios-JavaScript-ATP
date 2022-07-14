@@ -12,7 +12,19 @@
 function splitArrayIntoChunks( arrFull, splits){
 
     //Almaceno los nuevos trozos de array en una variable nueva
-    let result = [];
+    const result = [];
+
+        //Con este bucle recorro el array original dando saltos como indica la variable splits
+        for(let i = 0; i < arrFull.length; i+= splits){
+            result.push(arrFull.slice(i, i + splits));
+        }
+    return result;
+}
+
+const splitArrayIntoChunksOptimized = ( arrFull, splits) => {
+
+    //Almaceno los nuevos trozos de array en una variable nueva
+    const result = [];
 
         //Con este bucle recorro el array original dando saltos como indica la variable splits
         for(let i = 0; i < arrFull.length; i+= splits){

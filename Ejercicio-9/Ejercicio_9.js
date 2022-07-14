@@ -4,21 +4,20 @@
 //La función debe de tener un objeto como único parámetro
 
 
-function toLowercaseKeys(myObject) {
+//CON REDUCE
+const toLowercaseKeys = (myObject) => {
 
-    //Tercera Forma
-        //Convierto el objeto a un array
-        let newArr = Object.entries(myObject);
+    const newObj = {};
 
-        let arrLower = newArr.map(function(i) {
-            i[0] = i[0].toLowerCase();
-            return i;
-        });
+    Object.entries(myObject).reduce((previousValue, currentValue) =>
+     {
+        newObj[previousValue[0].toLocaleLowerCase()] = previousValue[1];
+        newObj[currentValue[0].toLocaleLowerCase()] = currentValue[1];
 
-        //Vuelvo a convertir el array a un Objeto
-        const newObj = Object.fromEntries(arrLower);
+     })
 
-        return newObj;
+    return newObj;
+    
 }
 
 const myObject = { NamE: 'Charles', ADDress: 'Home Street' };

@@ -3,6 +3,6 @@
 
 const arrDirty = [NaN, 0, 5, false, -1, '',undefined, 3, null, 'test'];
 
-const arrTruthy = arrDirty.filter((n) => Number.isInteger(n));
+const arrTruthy = arrDirty.filter((n) => n );
 
 console.log(arrTruthy);

@@ -15,13 +15,14 @@
         const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 
         let l = 0;
-
+        const num = 1024;
         do{
-            numInBytes = (numInBytes / 1024);
+            numInBytes = (numInBytes / num);
             //console.log(numInBytes);
             l++;
 
-        }while ( numInBytes > 1024 || numInBytes < -1024);
+        }while ( numInBytes > num || numInBytes < -num);
+
         return numInBytes.toPrecision(numOfDigits) + sizes[l]; 
 
     }
@@ -30,9 +31,9 @@
     //const result = fromBytesToFormattedSizeUnits(1024);
     //console.log(result); // 1KB
      
-    //const result2 = fromBytesToFormattedSizeUnits(123456789);
-    //console.log(result2); // 123MB
+    const result2 = fromBytesToFormattedSizeUnits(123456789);
+    console.log(result2); // 123MB
      
-    const result3 = fromBytesToFormattedSizeUnits(-12145489451.5932, 5);
-    console.log(result3); // -12.145GB
+    //const result3 = fromBytesToFormattedSizeUnits(-12145489451.5932, 5);
+    //console.log(result3); // -12.145GB
     

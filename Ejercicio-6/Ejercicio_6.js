@@ -6,22 +6,21 @@
         //al que redondear
     // - IMPORTANTE NO USAR TO FIXED()
 
-function roundTo(numF, numD){
+function roundTo(numF, numD = 0){
 
-    let num1 = parseFloat(numF);
-    let num2 = parseInt(numD);
+ 
 
-    let multiple = Math.pow(10, num2); //Esta función devuelve la base elevada al exponente
+    const multiple = Math.pow(10, numD); //Esta función devuelve la base elevada al exponente
     //console.log(multiple)
 
-    let numberRounded = Math.round(num1 * multiple) / multiple; //Esta función redondea al entero más cercano
-    return numberRounded;
+    return Math.round(numF * multiple) / multiple; //Esta función redondea al entero más cercano
+  
 }
 
 
-//const roundedResult = roundTo(2.123, 2);
-//console.log(roundedResult); // 2.12
+const roundedResult = roundTo(2.123);
+console.log(roundedResult); // 2.12
 
 
-const roundedResult = roundTo(1.123456789, 6);
-console.log(roundedResult); // 1.123457
+//const roundedResult = roundTo(1.123456789, 6);
+//console.log(roundedResult); // 1.123457

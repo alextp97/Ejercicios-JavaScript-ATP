@@ -11,6 +11,6 @@ const arrCities = [
     {city: 'Jaén', country: 'Spain', capital: false},
 ];
 
-const cities = arrCities.filter((c) => c.capital === false);
+const cities = arrCities.filter((c) => !c.capital);
 
 console.log(cities);
